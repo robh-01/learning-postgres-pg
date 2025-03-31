@@ -22,11 +22,11 @@ VALUES
 async function main() {
   console.log("seeding...");
   const client = new Client({
-    host: process.env.HOST, //or wherever the db is hosted
+    host: process.env.HOST, //wherever the db is hosted
     user: process.env.USER,
     database: process.env.DATABASE,
     password: process.env.PASSWORD,
-    port: process.env.DB_PORT, //the default port
+    port: process.env.DB_PORT,
   });
   await client.connect();
   await client.query(SQL);

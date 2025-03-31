@@ -9,11 +9,11 @@ const { Pool } = pg;
 // All of the following properties should be read from environment variables
 // We're hardcoding them here for simplicity
 export default new Pool({
-  host: process.env.HOST, //or wherever the db is hosted
+  host: process.env.HOST, //wherever the db is hosted
   user: process.env.USER,
   database: process.env.DATABASE,
   password: process.env.PASSWORD,
-  port: process.env.DB_PORT, //the default port
+  port: process.env.DB_PORT,
 });
 
 // An alternative to defining the connection information is through a Connection URI. You’ll likely be using connection URIs when connecting with a hosted database service. Here’s what it would look like based on the above properties:
