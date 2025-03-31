@@ -20,4 +20,8 @@ export async function userAddPost(req, res) {
   await queries.insertUsername(userName);
   res.redirect("/");
 }
-``;
+
+export async function deleteAllUserGet(req, res) {
+  await queries.deleteAllUsernames();
+  res.redirect("/");
+}

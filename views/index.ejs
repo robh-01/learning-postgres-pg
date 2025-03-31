@@ -8,7 +8,16 @@
   <body>
     <h1><%= title %></h1>
     Usernames: <%= usernames.map((user) => user.username).join(", ") %>
-    <br>
+    <br />
     <a href="/new">Add new username</a>
+    <br />
+    <form action="/delete" method="get">
+      <button
+        type="submit"
+        onclick="return confirm('Are you sure you want to delete all the usernames')"
+      >
+        Delete all usernames
+      </button>
+    </form>
   </body>
 </html>

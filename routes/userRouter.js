@@ -7,5 +7,6 @@ userRouter.get("/", userController.userListGet);
 
 userRouter.get("/new", userController.userAddGet);
 userRouter.post("/new", userController.userAddPost);
+userRouter.get("/delete", userController.deleteAllUserGet);
 
 export default userRouter;

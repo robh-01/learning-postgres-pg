@@ -16,3 +16,7 @@ export async function searchUsernames(searchQuery) {
   );
   return rows;
 }
+
+export async function deleteAllUsernames() {
+  await pool.query("DELETE FROM usernames");
+}
