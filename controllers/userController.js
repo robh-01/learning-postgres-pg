@@ -1,7 +1,12 @@
 import * as queries from "../db/queries.js";
 
 export async function userListGet(req, res) {
-  const usernames = await queries.getAllUsernames();
+  let usernames;
+  if (req.query.search) {
+    usernames = await queries.searchUsernames(req.query.search);
+  } else {
+    usernames = await queries.getAllUsernames();
+  }
   console.log("Usernames: ", usernames);
   res.render("index", { title: "All users", usernames: usernames });
 }
@@ -15,4 +20,4 @@ export async function userAddPost(req, res) {
   await queries.insertUsername(userName);
   res.redirect("/");
 }
-``
+``;
